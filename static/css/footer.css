@@ -1,0 +1,86 @@
+.site-footer {
+  background: var(--cream);
+  color: var(--navy);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  align-items: start;
+  max-width: 78em;
+  margin: 0 auto;
+  padding: 2em 2em 1em;
+}
+
+.footer-nav{
+    line-height: 1.6;
+}
+.footer-tagline {
+  margin: 0;
+  font-size: clamp(1.6em, 3.5vw, 2.6em);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.footer-sub {
+  margin: 0.7em 0 0;
+  font-size: 1.1em;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+  padding: 0 2em;
+  border-left: 2px solid rgba(28, 42, 94, 0.12);
+}
+
+.footer-col a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: var(--pink-strong);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-col a:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+.footer-docs-title {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.footer-docs-title img {
+  height: 1.4em;
+  width: auto;
+}
+
+.footer-garden {
+  height: clamp(120px, 18vw, 260px);
+  background: url('../images/footer-garden.png') center bottom / cover no-repeat;
+}
+
+@media (max-width: 800px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    padding: 1.5em 1em 0.5em;
+  }
+  .footer-col {
+    padding: 1em 0 0;
+    border-left: none;
+    border-top: 2px solid rgba(28, 42, 94, 0.12);
+  }
+}
