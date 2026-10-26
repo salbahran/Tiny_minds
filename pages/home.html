@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tiny Brains - Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/header.css" />
+    <link rel="stylesheet" href="../static/css/footer.css" />
+    <link rel="stylesheet" href="../static/css/home.css" />
+    <script src="../js/components/header.js" defer></script>
+    <script src="../js/components/footer.js" defer></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main>
+      <!-- Section 1: hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="blob">
+          <div class="hero-text">
+            <h1 id="hero-title">Little minds, big discoveries!</h1>
+            <p>Fun, interactive learning for curious little ones aged 2–6.</p>
+            <a class="btn-start" href="#play"
+              >Start playing <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <img src="../static/images/home-dinasour.png" alt="" />
+        </div>
+      </section>
+
+      <section id="play" class="home-section" aria-labelledby="play-title">
+        <h2 id="play-title" class="sr-only">Learn and Play</h2>
+
+        <div class="cards-grid">
+          <!-- Card 1: Alphabet -->
+          <a href="../pages/alphabet.html" class="card card-alphabet">
+            <div class="card-content">
+              <h2>Alphabet</h2>
+              <p>Learn letters, sounds and build words!</p>
+              <span class="card-btn" aria-label="Go to Alphabet">→</span>
+            </div>
+          </a>
+
+          <!-- Right Side Container -->
+          <div class="cards-stack">
+            <!-- Card 2: Animals -->
+            <a href="../pages/animals.html" class="card card-animals">
+              <div class="card-content">
+                <h2>Animals</h2>
+                <p>Discover amazing animals from around the world!</p>
+                <span class="card-btn" aria-label="Go to Animals">→</span>
+              </div>
+            </a>
+
+            <!-- Card 3: Numbers -->
+            <a href="../pages/numbers.html" class="card card-numbers">
+              <div class="card-content">
+                <h2>Numbers</h2>
+                <p>Count, match and explore numbers in fun ways!</p>
+                <span class="card-btn" aria-label="Go to Numbers">→</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Section 3: Overview -->
+      <section class="overview-section" aria-labelledby="overview-title">
+        <div class="overview-container">
+          <!-- Left Side: Text and Accordion Bars -->
+          <div class="overview-content">
+            <div class="overview-header-group">
+              <h2 id="overview-title">Overview</h2>
+              <!-- Sparkles/Lines graphic near title -->
+              <img
+                src="../images/overview-sparkles.png"
+                alt=""
+                class="overview-sparkles"
+              />
+            </div>
+
+            <p class="overview-subtitle">
+              Playful learning for curious little ones!
+            </p>
+            <p class="overview-desc">
+              Tiny Brains helps children aged 2–6 explore letters, numbers and
+              animals through fun games, stories and interactive activities.
+            </p>
+
+            <!-- Accordion / Info Bars -->
+            <div class="overview-bars">
+              <!-- Bar 1: Who is it for? -->
+              <details class="overview-bar">
+                <summary>
+                  <div class="bar-left">
+                    <div class="bar-icon-circle">
+                      <img src="../images/icon-kid.png" alt="Kid icon" />
+                    </div>
+                    <span>Who is it for?</span>
+                  </div>
+                  <span class="arrow-icon" aria-hidden="true">⌄</span>
+                </summary>
+                <div class="bar-content">
+                  <p>
+                    Designed specifically for curious toddlers and preschoolers
+                    aged 2 to 6 years old.
+                  </p>
+                </div>
+              </details>
+
+              <!-- Bar 2: What will children learn? -->
+              <details class="overview-bar">
+                <summary>
+                  <div class="bar-left">
+                    <div class="bar-icon-circle">
+                      <img src="../images/icon-abc.png" alt="ABC icon" />
+                    </div>
+                    <span>What will children learn?</span>
+                  </div>
+                  <span class="arrow-icon" aria-hidden="true">⌄</span>
+                </summary>
+                <div class="bar-content">
+                  <p>
+                    Children explore the alphabet, animal sounds, counting
+                    numbers, and basic word building.
+                  </p>
+                </div>
+              </details>
+
+              <!-- Bar 3: How does it work? -->
+              <details class="overview-bar">
+                <summary>
+                  <div class="bar-left">
+                    <div class="bar-icon-circle">
+                      <img src="../images/icon-star.png" alt="Star icon" />
+                    </div>
+                    <span>How does it work?</span>
+                  </div>
+                  <span class="arrow-icon" aria-hidden="true">⌄</span>
+                </summary>
+                <div class="bar-content">
+                  <p>
+                    Through fun, safe, interactive mini-games and engaging
+                    visuals tailored for young minds.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Right Side: Lion Illustration -->
+          <div class="overview-image-wrapper">
+            <img
+              src="../images/overview-lion.png"
+              alt="Cute cartoon lion in the grass"
+              class="overview-lion"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Section 4 -->
+    </main>
+
+    <site-footer></site-footer>
+  </body>
+</html>
