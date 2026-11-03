@@ -162,54 +162,64 @@
         </div>
       </section>
      <!-- Section 4: Login Section -->
-    <section id="login" class="login-section" aria-labelledby="login-title">
-      <!-- Background decorative images / elements -->
-      <div class="login-bg-wrapper">
-        <!-- Left Illustration (Boy) -->
-        <img src="../static/images/login-boy.png" alt="" class="login-decoration boy-img">
-        
-        <!-- Right Illustration (Dinosaur) -->
-        <img src="../static/images/login-dino.png" alt="" class="login-decoration dino-img">
+<section id="login" class="register-section" aria-labelledby="register-title">
+  <!-- Wrapper that holds the absolute positioning for the photos -->
+  <div class="register-bg-wrapper">
+    
+    <!-- Left Illustration (Boy) -->
+    <img src="../static/images/login-boy.png" alt="" class="register-decoration boy-img">
 
-        <!-- Central Login Card -->
-        <div class="login-card">
-          <div class="login-header">
-            <img src="../static/images/logo.png" alt="Tiny Brains Logo" class="login-logo">
-            <h2 id="login-title">Log in</h2>
+    <!-- Right Illustration (Dinosaur) -->
+    <img src="../static/images/login-dino.png" alt="" class="register-decoration dino-img">
+
+    <!-- Central Registration Card -->
+    <div class="register-card">
+      <div class="register-header">
+        <h2 id="register-title">Create Account</h2>
+        <p>Join Tiny Brains for fun learning adventures!</p>
+      </div>
+
+      <form id="registrationForm" class="register-form" novalidate>
+        
+        <!-- First Name & Last Name Side-by-Side -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="e.g. Sara" required minlength="3">
+            <span class="error-text" id="firstNameError"></span>
           </div>
 
-          <form class="login-form" action="#" method="POST">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <div class="input-wrapper">
-                <span class="input-icon" aria-hidden="true">✉</span>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="password">Password</label>
-              <div class="input-wrapper">
-                <span class="input-icon" aria-hidden="true">🔒</span>
-                <input type="password" id="password" name="password" placeholder="••••••••" required>
-              </div>
-            </div>
-
-            <div class="form-actions-link">
-              <a href="#forgot">Forgot password?</a>
-            </div>
-
-            <button type="submit" class="btn-signin">
-              Sign in <span aria-hidden="true">→</span>
-            </button>
-          </form>
-
-          <div class="login-footer-text">
-            <p>New here? <a href="signup.html">Sign up</a></p>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="e.g. Ahmed" required minlength="3">
+            <span class="error-text" id="lastNameError"></span>
           </div>
         </div>
-      </div>
-    </section>
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+          <label for="mobileNumber">Mobile Number</label>
+          <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="39123456" required maxlength="8" pattern="[0-9]{8}">
+          <span class="error-text" id="mobileError"></span>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" name="regEmail" placeholder="name@example.com" required>
+          <span class="error-text" id="emailError"></span>
+        </div>
+
+        <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+        <button type="submit" class="btn-register">
+          Register Now <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
     </main>
 
     <site-footer></site-footer>
