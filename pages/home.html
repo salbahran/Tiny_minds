@@ -97,7 +97,7 @@
                 <summary>
                   <div class="bar-left">
                     <div class="bar-icon-circle">
-                      <img src="../images/icon-kid.png" alt="Kid icon" />
+                      <img src="../static/images/icon-kid.png" alt="Kid icon" />
                     </div>
                     <span>Who is it for?</span>
                   </div>
@@ -116,7 +116,7 @@
                 <summary>
                   <div class="bar-left">
                     <div class="bar-icon-circle">
-                      <img src="../images/icon-abc.png" alt="ABC icon" />
+                      <img src="../static/images/icon-abc.png" alt="ABC icon" />
                     </div>
                     <span>What will children learn?</span>
                   </div>
@@ -135,7 +135,7 @@
                 <summary>
                   <div class="bar-left">
                     <div class="bar-icon-circle">
-                      <img src="../images/icon-star.png" alt="Star icon" />
+                      <img src="../static/images/icon-star.png" alt="Star icon" />
                     </div>
                     <span>How does it work?</span>
                   </div>
@@ -154,14 +154,62 @@
           <!-- Right Side: Lion Illustration -->
           <div class="overview-image-wrapper">
             <img
-              src="../images/overview-lion.png"
+              src="../static/images/lion.png"
               alt="Cute cartoon lion in the grass"
               class="overview-lion"
             />
           </div>
         </div>
       </section>
-      <!-- Section 4 -->
+     <!-- Section 4: Login Section -->
+    <section id="login" class="login-section" aria-labelledby="login-title">
+      <!-- Background decorative images / elements -->
+      <div class="login-bg-wrapper">
+        <!-- Left Illustration (Boy) -->
+        <img src="../static/images/login-boy.png" alt="" class="login-decoration boy-img">
+        
+        <!-- Right Illustration (Dinosaur) -->
+        <img src="../static/images/login-dino.png" alt="" class="login-decoration dino-img">
+
+        <!-- Central Login Card -->
+        <div class="login-card">
+          <div class="login-header">
+            <img src="../static/images/logo.png" alt="Tiny Brains Logo" class="login-logo">
+            <h2 id="login-title">Log in</h2>
+          </div>
+
+          <form class="login-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="input-wrapper">
+                <span class="input-icon" aria-hidden="true">✉</span>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-wrapper">
+                <span class="input-icon" aria-hidden="true">🔒</span>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+              </div>
+            </div>
+
+            <div class="form-actions-link">
+              <a href="#forgot">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn-signin">
+              Sign in <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <div class="login-footer-text">
+            <p>New here? <a href="signup.html">Sign up</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
     </main>
 
     <site-footer></site-footer>

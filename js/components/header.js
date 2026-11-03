@@ -20,7 +20,7 @@ class SiteHeader extends HTMLElement {
           <img src="../static/images/logo.png" alt="Tiny Brains - go to home page">
         </a>
         <nav class="main-nav" aria-label="Main">${navItems}</nav>
-        <a class="btn-signup" href="signup.html">Parent sign-up</a>
+        <a class="btn-signup" href="home.html#login">Parent sign-up</a>
       </header>`;
   }
 }
