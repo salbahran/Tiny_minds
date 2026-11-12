@@ -1,20 +1,127 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/css/header.css" />
     <link rel="stylesheet" href="../static/css/footer.css" />
+    <link rel="stylesheet" href="../static/css/animals.css" />
     <script src="../js/components/footer.js" defer></script>
     <script src="../js/components/header.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
   </head>
+
   <body>
     <site-header></site-header>
+
+    <main>
+      <section class="intro">
+        <h1>Meet the farm animals!</h1>
+        <p>Tap an animal to hear it and learn its name.</p>
+      </section>
+
+      <section class="farm">
+        <div class="farm-scene">
+          <img src="../static/images/farm.png" alt="A farm with a red barn" />
+
+          <button class="animal" data-animal="Giraffe"   style="left:8.5%;  top:50.3%; width:12.2%"><img src="../static/images/giraffe.png"   alt="giraffe" /></button>
+          <button class="animal" data-animal="Panda"     style="left:7.8%;  top:81.6%; width:10.5%">   <img src="../static/images/panda.png"     alt="panda" /></button>
+          <button class="animal" data-animal="Crocodile" style="left:24%;   top:75.5%; width:12%">  <img src="../static/images/crocodile.png" alt="crocodile" /></button>
+          <button class="animal" data-animal="Elephant"  style="left:43%;   top:56.9%; width:10.5%"> <img src="../static/images/elephant.png"  alt="elephant" /></button>
+          <button class="animal" data-animal="Dog"       style="left:42%;   top:76.6%; width:10%">  <img src="../static/images/dog.png"       alt="dog" /></button>
+          <button class="animal" data-animal="Fox"       style="left:62.9%; top:58.1%; width:8%">  <img src="../static/images/fox.png"       alt="fox" /></button>
+          <button class="animal" data-animal="Cat"       style="left:60.4%; top:78.8%; width:8%">   <img src="../static/images/cat.png"       alt="cat" /></button>
+          <button class="animal" data-animal="Lion"      style="left:80.9%; top:53.7%; width:11%">  <img src="../static/images/lionanimal.png"      alt="lion" /></button>
+          <button class="animal" data-animal="Bear"      style="left:90.6%; top:76.2%; width:11.9%"><img src="../static/images/bear.png"      alt="bear" /></button>
+          <button class="animal" data-animal="Rabbit"    style="left:75.9%; top:83.4%; width:7.2%"> <img src="../static/images/rabbit.png"    alt="rabbit" /></button>
+          <button class="animal" data-animal="Turtle"    style="left:46.3%; top:91.2%; width:7.9%"> <img src="../static/images/turtle.png"    alt="turtle" /></button>
+          <button class="animal" data-animal="Bird"      style="left:78.8%; top:21.4%; width:7.6%"> <img src="../static/images/bird.png"      alt="bird" /></button>
+        </div>
+        <p class="hint">Tap any animal!</p>
+      </section>
+
+      <!-- Card under the farm -->
+      <section class="card" id="card">
+        <div class="card-empty">Pick an animal to meet it!</div>
+
+        <div class="card-body">
+          <div class="card-photo">
+            <img id="cardPhoto" src="" alt="" />
+          </div>
+          <div class="card-info">
+            <h2 id="cardName"></h2>
+
+            <label class="btn-wrapper">
+              <input type="checkbox" class="toggle" id="nameToggle" aria-label="Hear the name" />
+              <span class="audio-btn">
+                <span class="btn-txt play">Hear the name</span>
+                <span class="btn-txt playing">Playing…</span>
+                <span class="dot"></span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <site-footer></site-footer>
+
+    <script>
+      const card = document.getElementById("card");
+      const cardPhoto = document.getElementById("cardPhoto");
+      const cardName = document.getElementById("cardName");
+      const nameToggle = document.getElementById("nameToggle");
+
+      let audio = null;
+      let current = null;
+
+      function stopAudio() {
+        if (audio) {
+          audio.pause();
+          audio = null;
+        }
+        nameToggle.checked = false;
+      }
+
+      function playFile(file, showPlaying) {
+        stopAudio();
+        const a = new Audio("../static/audios/" + file + ".mp3");
+        audio = a;
+        if (showPlaying) nameToggle.checked = true;
+        a.addEventListener("ended", () => {
+          if (audio === a) nameToggle.checked = false;
+        });
+        a.play().catch(() => (nameToggle.checked = false));
+      }
+
+      // Clicking an animal: show the card + play the ANIMAL SOUND
+      document.querySelectorAll(".animal").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".animal").forEach((b) => b.classList.remove("selected"));
+          btn.classList.add("selected");
+          btn.classList.remove("pop");
+          void btn.offsetWidth; // restart the animation
+          btn.classList.add("pop");
+
+          current = btn.dataset.animal.toLowerCase();
+          cardName.textContent = btn.dataset.animal;
+          card.classList.add("active");
+          card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+          playFile(current, false);
+        });
+      });
+
+      // The play button: plays the NAME audio only
+      nameToggle.addEventListener("change", () => {
+        if (!current) return;
+        if (nameToggle.checked) playFile(current + "-name", true);
+        else stopAudio();
+      }); q
+    </script>
   </body>
 </html>
