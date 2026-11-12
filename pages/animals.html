@@ -109,6 +109,11 @@
 
           current = btn.dataset.animal.toLowerCase();
           cardName.textContent = btn.dataset.animal;
+
+          const img = btn.querySelector("img");
+          cardPhoto.src = img.src;
+          cardPhoto.alt = btn.dataset.animal;
+
           card.classList.add("active");
           card.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
