@@ -1,20 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alphabet</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/css/header.css" />
     <link rel="stylesheet" href="../static/css/footer.css" />
+    <link rel="stylesheet" href="../static/css/alphabet.css" />
     <script src="../js/components/footer.js" defer></script>
     <script src="../js/components/header.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
+    <script src="../js/alphabet.js" defer></script>
   </head>
   <body>
     <site-header></site-header>
+
+    <main class="main-Section">
+      <section class="cards-Section">
+        <div class="flip-card">
+          <input type="checkbox" id="flipToggle" class="flip-toggle" checked aria-label="Flip card" />
+
+          <label for="flipToggle" class="flip-card-inner">
+            <div class="flip-card-front">
+              <img id="cardFront" src="/static/images/cards/A.png" alt="Card front" class="card-img">
+            </div>
+
+            <div class="flip-card-back">
+              <img id="cardBack" src="/static/images/cards/A@4x.png" alt="Card back" class="card-img" />
+            </div>
+          </label>
+        </div>
+
+        <p class="flip-hint">Flip the card to see the surprise!</p>
+        <button class="sound-btn" id="soundBtn" type="button">Play sound</button>
+      </section>
+
+      <section class="letters-Section" id="letters">
+        <img src="/static/images/cubes/A.png" data-letter="A" alt="A" />
+        <img src="/static/images/cubes/B.png" data-letter="B" alt="B" />
+        <img src="/static/images/cubes/C.png" data-letter="C" alt="C" />
+        <img src="/static/images/cubes/D.png" data-letter="D" alt="D" />
+        <img src="/static/images/cubes/E.png" data-letter="E" alt="E" />
+        <img src="/static/images/cubes/F.png" data-letter="F" alt="F" />
+        <img src="/static/images/cubes/G.png" data-letter="G" alt="G" />
+        <img src="/static/images/cubes/H.png" data-letter="H" alt="H" />
+        <img src="/static/images/cubes/I.png" data-letter="I" alt="I" />
+        <img src="/static/images/cubes/J.png" data-letter="J" alt="J" />
+        <img src="/static/images/cubes/K.png" data-letter="K" alt="K" />
+        <img src="/static/images/cubes/L.png" data-letter="L" alt="L" />
+        <img src="/static/images/cubes/M.png" data-letter="M" alt="M" />
+        <img src="/static/images/cubes/N.png" data-letter="N" alt="N" />
+        <img src="/static/images/cubes/O.png" data-letter="O" alt="O" />
+        <img src="/static/images/cubes/P.png" data-letter="P" alt="P" />
+        <img src="/static/images/cubes/Q.png" data-letter="Q" alt="Q" />
+        <img src="/static/images/cubes/R.png" data-letter="R" alt="R" />
+        <img src="/static/images/cubes/S.png" data-letter="S" alt="S" />
+        <img src="/static/images/cubes/T.png" data-letter="T" alt="T" />
+        <img src="/static/images/cubes/U.png" data-letter="U" alt="U" />
+        <img src="/static/images/cubes/V.png" data-letter="V" alt="V" />
+        <img src="/static/images/cubes/W.png" data-letter="W" alt="W" />
+        <img src="/static/images/cubes/X.png" data-letter="X" alt="X" />
+        <img src="/static/images/cubes/Y.png" data-letter="Y" alt="Y" />
+        <img src="/static/images/cubes/Z.png" data-letter="Z" alt="Z" />
+      </section>
+    </main>
+
     <site-footer></site-footer>
   </body>
 </html>
