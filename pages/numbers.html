@@ -1,20 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../static/css/header.css" />
-    <link rel="stylesheet" href="../static/css/footer.css" />
-    <script src="../js/components/footer.js" defer></script>
-    <script src="../js/components/header.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Numbers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/numbers.css" />
+  <link rel="stylesheet" href="../static/css/header.css" />
+  <link rel="stylesheet" href="../static/css/footer.css" />
+  <script src="../js/components/footer.js" defer></script>
+  <script src="../js/components/header.js" defer></script>
+  <script src="../js/numbers.js" defer></script>
+  <script src="../js/auth.js"></script>
+</head>
+
+<body>
+  <main class="numbers-page">
     <site-header></site-header>
-    <site-footer></site-footer>
-  </body>
+    <h1>Number Garden</h1>
+    <div class="numbers-layout">
+      <div class="numbers-card-area">
+        <div id="number-card" class="numbers-flip" role="button" tabindex="0"
+          aria-label="Flip number one card" aria-pressed="false">
+          <div class="numbers-flip-inner">
+            <img id="number-front" class="numbers-face" src="../static/images/numbers/front/01.png" alt="Number 1, One">
+            <img id="number-back" class="numbers-face numbers-back" src="../static/images/numbers/back/01.png"
+              alt="One strawberry">
+          </div>
+        </div>
+        <button type="button" id="number-sound" class="numbers-sound">Hear One</button>
+      </div>
+      <section class="numbers-panel" aria-labelledby="numbers-heading">
+        <div class="numbers-grid" id="number-options"></div>
+      </section>
+    </div>
+  </main>
+  <site-footer></site-footer>
+</body>
+
 </html>

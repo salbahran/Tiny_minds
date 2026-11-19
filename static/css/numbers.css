@@ -1,0 +1,291 @@
+.body{
+    background-color: var(--cream);
+}
+
+.numbers-page {
+    position: relative;
+    aspect-ratio: 1672 / 941;
+    background-color: var(--cream);
+    /* background: #8ed8f5 url("../images/numbers/number-garden.png") center / 100% 100% no-repeat; */
+    color: #142e60;
+    font-family: "Fredoka", "Arial Rounded MT Bold", system-ui, sans-serif;
+}
+
+
+.numbers-page h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 3% 16% 0;
+    text-align: center;
+    font-size: clamp(2rem, 5.4vw, 6rem);
+    font-weight: 700;
+    line-height: 1.05;
+    text-shadow: 0 3px 0 #ffffffb3;
+}
+
+.numbers-layout {
+    position: absolute;
+    inset: 0;
+}
+
+.numbers-card-area {
+    position: absolute;
+    top: 24%;
+    left: 8%;
+    width: 21%;
+    text-align: center;
+}
+
+.numbers-flip {
+    display: block;
+    width: min(100%, 280px);
+    aspect-ratio: 2 / 3;
+    margin: 0 auto;
+    cursor: pointer;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.numbers-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.45, 0, 0.55, 1);
+    will-change: transform;
+}
+
+.numbers-flip.is-flipped .numbers-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.numbers-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.numbers-back {
+    transform: rotateY(180deg);
+}
+
+.numbers-sound {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    margin-top: 6px;
+    padding: 9px 18px;
+    border: 2px solid #e6b8ff;
+    border-radius: 999px;
+    background: linear-gradient(#a85be5, #7131b4);
+    box-shadow: 0 4px 0 #4d237f;
+    color: white;
+    font: inherit;
+    font-size: clamp(1rem, 1.8vw, 1.65rem);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.numbers-sound::before {
+    content: "🔊" / "";
+}
+
+.numbers-sound:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #4d237f;
+}
+
+.numbers-panel {
+    position: absolute;
+    top: 37%;
+    right: 14%;
+    left: 33%;
+    height: 45%;
+}
+
+.numbers-panel h2 {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 700;
+    text-shadow: 0 2px 0 white;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    place-items: center;
+    height: 100%;
+    direction: ltr;
+}
+
+.numbers-option {
+    --stone-light: #a7f5ec;
+    --stone-base: #60d2c4;
+    --stone-edge: #258d82;
+
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    width: 93%;
+    aspect-ratio: 1.25;
+    padding: 0;
+    border: 2px solid #ffffffb3;
+    border-bottom-color: var(--stone-edge);
+    border-radius: 47% 44% 35% 37% / 52% 50% 36% 37%;
+    background:
+        radial-gradient(ellipse at 33% 17%, #ffffff80, transparent 47%),
+        linear-gradient(155deg,
+            var(--stone-light),
+            var(--stone-base) 65%,
+            var(--stone-edge));
+    box-shadow:
+        inset 0 3px 0 #ffffff80,
+        inset 0 -7px 0 #142e6026,
+        0 5px 0 var(--stone-edge),
+        0 9px 12px #213b3166;
+    color: #102552;
+    font-family: inherit;
+    font-size: clamp(1.65rem, 4.5vw, 4.8rem);
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 160ms ease;
+}
+
+.numbers-option:nth-child(4n + 2) {
+    --stone-light: #eed3ff;
+    --stone-base: #c59aef;
+    --stone-edge: #8250b3;
+}
+
+.numbers-option:nth-child(4n + 3) {
+    --stone-light: #fff5a9;
+    --stone-base: #ffda55;
+    --stone-edge: #c38b1d;
+}
+
+.numbers-option:nth-child(4n + 4) {
+    --stone-light: #ffe0c8;
+    --stone-base: #ffad8c;
+    --stone-edge: #c9684a;
+}
+
+.numbers-option[aria-pressed="true"] {
+    --stone-light: #ff91c4;
+    --stone-base: #e63283;
+    --stone-edge: #a21a59;
+
+    border-color: #fff2f9;
+    color: white;
+    text-shadow: 0 2px 0 #a21a59;
+}
+
+.numbers-option:nth-child(n + 6) {
+    grid-row: 2;
+}
+
+.numbers-option:nth-child(6) {
+    grid-column: 5;
+}
+
+.numbers-option:nth-child(7) {
+    grid-column: 4;
+}
+
+.numbers-option:nth-child(8) {
+    grid-column: 3;
+}
+
+.numbers-option:nth-child(9) {
+    grid-column: 2;
+}
+
+.numbers-option:nth-child(10) {
+    grid-column: 1;
+}
+
+.numbers-page button:focus-visible,
+.numbers-flip:focus-visible {
+    outline: 3px solid #142e60;
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .numbers-option:hover {
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 760px) {
+    .numbers-page {
+        aspect-ratio: auto;
+        padding: 24px 14px 52px;
+        background-size: cover;
+    }
+
+    .numbers-page h1 {
+        padding: 0;
+    }
+
+    .numbers-layout {
+        position: static;
+        display: grid;
+        gap: 24px;
+        margin-top: 16px;
+    }
+
+    .numbers-card-area {
+        position: static;
+        width: min(66%, 240px);
+        margin: auto;
+    }
+
+    .numbers-panel {
+        position: static;
+        height: auto;
+        padding: 12px 8px 18px;
+        border-radius: 22px;
+        background: #fff7ddf2;
+    }
+
+    .numbers-panel h2 {
+        position: static;
+        margin: 0 0 12px;
+    }
+
+    .numbers-grid {
+        height: auto;
+        gap: 12px 2px;
+    }
+
+    .numbers-option {
+        width: 94%;
+        min-height: 44px;
+        font-size: clamp(1.25rem, 5vw, 2rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .numbers-flip-inner {
+        transition-duration: 0.3s;
+    }
+
+    .numbers-option {
+        transition: none;
+    }
+}
