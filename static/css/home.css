@@ -12,7 +12,6 @@
   --green: #2f8a67;
   --green-dark: #267454;
   --error: #c2255c;
-  --header-height: 5em; /* keep equal to your header's height */
 }
 
 * {
@@ -28,10 +27,6 @@ img {
 body {
   background-color: var(--cream);
   font-family: 'Fredoka', sans-serif;
-}
-
-main {
-  padding-top: var(--header-height);
 }
 
 .home-section {
@@ -53,8 +48,7 @@ main {
 
 /* ---------- 2. Hero ---------- */
 .hero {
-  min-height: 80vh;
-  padding: 1.5em 0;
+  padding: 2em 0 3em;
   color: var(--navy);
 }
 
@@ -63,19 +57,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3em;
-  width: 90%;
-  min-height: 85vh;
-  margin: -5em auto 0;
-  padding: 4em 6%;
+  gap: clamp(1.5em, 4vw, 4em);
+  width: 100%;
+  min-height: min(68vh, 48em);
+  margin: 0 auto;
+  padding: clamp(2em, 5vw, 4em) clamp(1.5em, 6vw, 5em);
 
 }
 
 .hero-text {
   flex: 1;
   max-width: 36em;
-  margin-top: -8em;
-  margin-left: 8em;
+  margin: 0;
 }
 
 .hero h1 {
@@ -119,7 +112,6 @@ main {
   max-width: 32em;
   min-width: 0;
   height: auto;
-  margin-top: -8em;
   object-fit: contain;
 }
 
@@ -244,8 +236,8 @@ main {
   margin: 3em 0;            /* room for the waves above and below */
   padding: 4em 1.5em;
   overflow-x: clip;
-  background: #fff0b3;
-  height: 75vh;
+  min-height: 0;
+  height: auto;
 }
 
 .overview-container {
@@ -255,7 +247,7 @@ main {
   gap: 3em;
   max-width: 75em;
   margin: 0 auto;
-  margin-top: -4em;
+  margin-top: 0;
 }
 
 .overview-content {
@@ -579,10 +571,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3em;
+  gap: clamp(1.5em, 4vw, 4em);
   width: 100%;
-  min-height: 65vh;
-  padding: 4em 8%;
+  min-height: min(68vh, 48em);
+  margin: 0 auto;
+  padding: clamp(2em, 5vw, 4em) clamp(1.5em, 6vw, 5em);
   background: #fff0b3;
 }
 
@@ -633,31 +626,21 @@ main {
   background-image: url('../images/wave.svg');
 }
 
-.overview-section::before,
+/* .overview-section::before,
 .overview-section::after {
   background-image: url('../images/wave.svg');
-}
+} */
 /* ---------- 6. Responsive ---------- */
-/* Breakpoints are in em (1em = 16px): 37.5em = 600px, 48em = 768px,
-   50em = 800px, 56.25em = 900px, 62em = about 1000px */
-
-/* Two columns of cards */
-@media (min-width: 48em) {
+@media (min-width: 60em) {
   .cards-grid {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-/* Overview: lion beside the text */
-@media (min-width: 56.25em) {
   .overview-container {
     flex-direction: row;
     justify-content: space-between;
   }
-}
 
-/* First and last name side by side */
-@media (min-width: 37.5em) {
   .form-row {
     flex-direction: row;
     gap: 1em;
@@ -668,94 +651,30 @@ main {
   }
 }
 
-/* Tablets and small laptops: give the hero text more room */
-@media (max-width: 62em) {
-  .hero-text {
-    margin-left: 2em;
+/* Center the hero pair on wide desktop displays. */
+@media (min-width: 75em) {
+  .blob {
+    justify-content: center;
+    gap: clamp(3em, 6vw, 7em);
   }
-}
-
-/* No room for the side characters */
-@media (max-width: 56.25em) {
-  .register-decoration {
-    display: none;
-  }
-}
-
-/* Phones */
-@media (max-width: 50em) {
-  :root {
-    --header-height: 9em; /* the header wraps to two rows on phones */
-  }
-
-  /* Hero: stack text above the dinosaur, and undo the desktop nudges */
-.hero {
-  padding: 2em 0;
-}
-
-.blob {
-  flex-direction: column;
-  justify-content: center;
-  gap: 2em;
-  min-height: auto;
-  padding: 3em 1.5em;
-  text-align: center;
-}
-
-.blob::before,
-.blob::after {
-  height: 2em;
-  background-size: 14em 100%;
-}
-
-.blob::after {
-  background-position: 7em 0;
-}
-
-.hero-text {
-  flex: none;
-  max-width: 100%;
-}
-
-.blob img {
-  flex: none;
-  width: 100%;
-  max-width: 20em;
-}
 
   .hero-text {
-    flex: none;
-    max-width: 100%;
-    margin: 0;
-  }
-
-  .hero h1 {
-    font-size: clamp(2em, 7vw, 3em);
-  }
-
-  .hero p {
-    font-size: 1.1em;
+    flex: 0 1 36em;
   }
 
   .blob img {
-    flex: none;
-    width: 100%;
-    max-width: 20em;
-    margin-top: 0;
+    flex: 0 1 32em;
   }
+}
 
-  /* Play cards: shorter, and the picture covers the card instead of stretching */
-  #play {
-    padding: 3em 1em 1em;
-  }
-
+@media (max-width: 59.99em) {
   .card-alphabet {
-    min-height: 26em;
+    min-height: clamp(22em, 48vw, 32em);
   }
 
   .card-animals,
   .card-numbers {
-    min-height: 16em;
+    min-height: 17em;
   }
 
   .card-alphabet,
@@ -763,45 +682,159 @@ main {
   .card-numbers {
     background-size: cover;
   }
-
-  /* Overview */
-  .overview-section {
-  position: relative;
-  margin: 3em 0;            /* room for the waves above and below */
-  padding: 4em 1.5em;
-  overflow-x: clip;
 }
 
-  .bar-content {
-    padding-left: 1.5em; /* the 4.5em indent is too wide for a phone */
+@media (max-width: 56.25em) {
+  .overview-image-wrapper,
+  .register-decoration {
+    display: none;
   }
 
-  /* Register */
-  .register-section {
-    padding: 2em 1em;
+  .overview-section {
+    padding: 3em 1.5em;
   }
 
-  .register-card {
+  .overview-container {
+    max-width: 48em;
+  }
+}
+
+@media (max-width: 50em) {
+  .hero {
+    padding: 1em 0 2em;
+  }
+
+  .blob {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+    min-height: 0;
+    padding: 2.5em 1.25em;
+    text-align: center;
+  }
+
+  .blob::before,
+  .blob::after {
+    height: 2em;
+    background-size: 14em 100%;
+  }
+
+  .blob::after {
+    background-position: 7em 0;
+  }
+
+  .hero-text {
+    flex: none;
+    max-width: 38em;
+  }
+
+  .hero h1 {
+    font-size: clamp(2em, 7vw, 3em);
+  }
+
+  .hero p {
+    font-size: clamp(1.05em, 3.5vw, 1.25em);
+  }
+
+  .blob img {
+    flex: none;
+    width: min(100%, 20em);
+    max-width: 20em;
+  }
+
+  #play {
+    padding: 3em 1em 1em;
+  }
+
+  .card-content {
     padding: 1.5em;
   }
 
-  .register-header h2 {
-    font-size: 2em;
+  .card-content h2 {
+    font-size: clamp(1.8em, 5vw, 2.2em);
   }
-}
 
-/* Small phones */
-@media (max-width: 30em) {
-  .btn-start {
-    display: block;
-    text-align: center;
+  .overview-section {
+    margin: 2em 0;
+    padding: 2.5em 1em;
+  }
+
+  .overview-header-group h2 {
+    font-size: clamp(2.2em, 8vw, 3em);
+  }
+
+  .overview-subtitle {
+    font-size: 1.1em;
+  }
+
+  .bar-content {
+    padding: 0 1.25em 1.25em;
+  }
+
+  .overview-bar {
+    border-radius: 1.25em;
+  }
+
+  .overview-bar summary {
+    gap: 0.75em;
+    padding: 0.75em;
+  }
+
+  .bar-left {
+    gap: 0.7em;
   }
 
   .bar-left span {
     font-size: 1.05em;
   }
 
-  .overview-bar summary {
-    padding-right: 1em;
+  .register-section {
+    padding: 2em 1em;
+  }
+
+  .register-bg-wrapper {
+    padding: 0;
+  }
+
+  .register-card {
+    padding: clamp(1.25em, 5vw, 2em);
+    border-radius: 1.5em;
+  }
+
+  .register-header {
+    margin-bottom: 1.5em;
+  }
+
+  .register-header h2 {
+    font-size: clamp(1.8em, 7vw, 2.3em);
+  }
+}
+
+@media (max-width: 30em) {
+  .btn-start {
+    display: block;
+    text-align: center;
+  }
+
+  .card-alphabet {
+    min-height: 22em;
+  }
+
+  .card-animals,
+  .card-numbers {
+    min-height: 14em;
+  }
+
+  .overview-header-group {
+    gap: 0.5em;
+  }
+
+  .overview-sparkles {
+    height: 1.7em;
+  }
+
+  .bar-icon-circle {
+    width: 2.5em;
+    height: 2.5em;
   }
 }

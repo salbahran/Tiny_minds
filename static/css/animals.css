@@ -9,13 +9,35 @@
   --mint: #bdeee6;
   --lavender: #dcc8f2;
 }
-* { box-sizing: border-box; }
+
+/* Fixed: replaced '-' with '*' */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fixed: ensures cream background fills the entire viewport with no white borders */
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
   background: var(--cream);
   color: var(--navy);
   font-family: "Fredoka", system-ui, sans-serif;
   font-weight: 500;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  /* Fixed: replaced '-' with '*' */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 main {
   max-width: 1100px;
@@ -29,10 +51,10 @@ main {
 /* ---------- Farm ---------- */
 .farm {
   position: relative;
-  background: #fff;
-  border-radius: 32px;
-  padding: 12px;
-  box-shadow: 0 8px 24px rgba(31, 42, 92, 0.1);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 .farm-scene { position: relative; line-height: 0; }
 .farm-scene > img { width: 100%; height: auto; border-radius: 22px; display: block; }
@@ -260,10 +282,58 @@ main {
     0 0 32px 2px hsla(var(--hue), 50%, 50%, 0.5) inset;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .card-body { grid-template-columns: 1fr; }
   .card-info { text-align: center; align-items: center; }
   .btn-wrapper { align-self: center; }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 20px 12px 36px;
+  }
+
+  .intro h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  .farm-scene > img {
+    border-radius: 14px;
+  }
+
+  .card {
+    margin-top: 20px;
+    border-radius: 24px;
+  }
+
+  .card-empty {
+    padding: 24px 18px;
+    font-size: 1.1rem;
+  }
+
+  .card-photo {
+    padding: 18px;
+  }
+
+  .card-photo img {
+    max-width: 180px;
+  }
+
+  .card-info {
+    padding: 22px 16px 26px;
+  }
+
+  .card-info h2 {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .btn-wrapper {
+    --width: min(210px, 80vw);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }

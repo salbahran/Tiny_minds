@@ -1,10 +1,23 @@
-.body{
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    max-width: 100%;
+    overflow-x: clip;
     background-color: var(--cream);
 }
 
 .numbers-page {
     position: relative;
     aspect-ratio: 1672 / 941;
+    min-height: 100vh;
     background-color: var(--cream);
     /* background: #8ed8f5 url("../images/numbers/number-garden.png") center / 100% 100% no-repeat; */
     color: #142e60;
@@ -231,10 +244,10 @@
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1200px) {
     .numbers-page {
         aspect-ratio: auto;
-        padding: 24px 14px 52px;
+        padding: clamp(24px, 5vw, 44px) clamp(14px, 4vw, 32px) 52px;
         background-size: cover;
     }
 
@@ -251,7 +264,7 @@
 
     .numbers-card-area {
         position: static;
-        width: min(66%, 240px);
+        width: min(66%, 280px);
         margin: auto;
     }
 
@@ -270,13 +283,39 @@
 
     .numbers-grid {
         height: auto;
-        gap: 12px 2px;
+        gap: clamp(8px, 2vw, 14px) 4px;
     }
 
     .numbers-option {
         width: 94%;
         min-height: 44px;
         font-size: clamp(1.25rem, 5vw, 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .numbers-page {
+        padding: 24px 12px 40px;
+    }
+
+    .numbers-page h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .numbers-layout {
+        gap: 20px;
+    }
+
+    .numbers-card-area {
+        width: min(72%, 230px);
+    }
+
+    .numbers-panel {
+        padding: 12px 6px 16px;
+    }
+
+    .numbers-option {
+        font-size: clamp(1.15rem, 6vw, 1.7rem);
     }
 }
 

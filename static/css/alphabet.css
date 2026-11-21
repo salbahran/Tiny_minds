@@ -244,19 +244,20 @@ body {
 @media (max-width: 800px) {
   .main-Section {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 16px;
+    gap: clamp(20px, 4vw, 32px);
+    padding: 20px clamp(16px, 4vw, 32px) 32px;
   }
 
   .flip-card {
-    width: 260px;
-    height: 360px;
+    width: min(72vw, 280px);
+    height: auto;
+    aspect-ratio: 8 / 11;
   }
 
   .letters-Section {
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 14px;
-    row-gap: 22px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: clamp(8px, 2vw, 14px);
+    row-gap: clamp(12px, 2.5vw, 22px);
   }
 
   .letters-Section img {
@@ -265,5 +266,24 @@ body {
 
   .letters-Section img:nth-child(22) {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-Section {
+    gap: 24px;
+    padding-inline: 12px;
+  }
+
+  .letters-Section {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .flip-hint {
+    font-size: 1rem;
+  }
+
+  .sound-btn {
+    min-height: 44px;
   }
 }
