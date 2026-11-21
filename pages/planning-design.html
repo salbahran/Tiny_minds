@@ -1,20 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../static/css/header.css" />
-    <link rel="stylesheet" href="../static/css/footer.css" />
-    <script src="../js/components/footer.js" defer></script>
-    <script src="../js/components/header.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
-  </head>
-  <body>
-    <site-header></site-header>
-    <site-footer></site-footer>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiny Brains – Planning &amp; Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/header.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
+  <link rel="stylesheet" href="../static/css/planning-desgin.css">
+  <script src="../js/auth.js"></script>
+  <script src="../js/components/header.js" defer></script>
+  <script src="../js/components/footer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <site-header></site-header>
+
+  <main id="main" class="page">
+
+    <div class="page-intro">
+      <h1>Website Planning &amp; Design</h1>
+      <p class="lead">How we planned Tiny Brains and designed it for children aged 2 to 6 and for the parents who sign them up.</p>
+      <nav class="toc" aria-label="On this page">
+        <ul>
+          <li><a href="#wireframes">Wireframes</a></li>
+          <li><a href="#mockups">Mockups</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="block" id="wireframes" aria-labelledby="wireframes-title">
+      <h2 id="wireframes-title">Wireframes</h2>
+      <p>Low-fidelity layouts for all seven pages. They show where content goes before we think about colour or style.</p>
+      <p class="scroll-hint">Scroll sideways to see every page.</p>
+
+      <div class="h-scroll" role="region" aria-label="Wireframes gallery, scroll sideways" tabindex="0">
+        <figure class="h-card">
+          <div class="image-frame" role="region" aria-label="Home wireframe image, scroll vertically if needed" tabindex="0">
+            <img src="../static/images/wireframes/home.png" alt="Home page wireframe" loading="lazy">
+          </div>
+          <figcaption><strong>Home</strong><span>home.html</span></figcaption>
+        </figure>
+        <figure class="h-card">
+          <div class="image-frame" role="region" aria-label="Numbers wireframe image, scroll vertically if needed" tabindex="0">
+            <img src="../static/images/wireframes/TOPIC1.png" alt="Numbers page wireframe" loading="lazy">
+          </div>
+          <figcaption><strong>Numbers</strong><span>numbers.html</span></figcaption>
+        </figure>
+        <figure class="h-card">
+          <div class="image-frame" role="region" aria-label="Alphabet wireframe image, scroll vertically if needed" tabindex="0">
+            <img src="../static/images/wireframes/TOPIC2.png" alt="Alphabet page wireframe" loading="lazy">
+          </div>
+          <figcaption><strong>Alphabet</strong><span>alphabet.html</span></figcaption>
+        </figure>
+        <figure class="h-card">
+          <div class="image-frame" role="region" aria-label="Animals wireframe image, scroll vertically if needed" tabindex="0">
+            <img src="../static/images/wireframes/TOPIC3.png" alt="Animals page wireframe" loading="lazy">
+          </div>
+          <figcaption><strong>Animals</strong><span>animals.html</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 2. MOCKUPS ============ -->
+    <section class="block" id="mockups" aria-labelledby="mockups-title">
+      <h2 id="mockups-title">Mockups</h2>
+      <p>High-fidelity designs with our colours, fonts and illustrations applied.</p>
+      <p class="scroll-hint">Scroll sideways to see every page.</p>
+
+      <div class="h-scroll h-scroll--wide" role="region" aria-label="Mockups gallery, scroll sideways" tabindex="0">
+        <figure class="h-card">
+          <div class="image-frame" role="region" aria-label="Home mockup image, scroll vertically if needed" tabindex="0">
+            <img src="../static/images/mockups/Home.png" alt="Home page mockup" loading="lazy">
+          </div>
+          <figcaption><strong>Home</strong><span>Hero, learning worlds, parent sign-up</span></figcaption>
+        </figure>
+        <figure class="h-card">
+          <div class="image-frame" role="region" aria-label="Numbers mockup image, scroll vertically if needed" tabindex="0">
+            <img src="../static/images/mockups/Numbers.png" alt="Numbers page mockup" loading="lazy">
+          </div>
+          <figcaption><strong>Numbers</strong><span>Counting cards with sound</span></figcaption>
+        </figure>
+        <figure class="h-card">
+          <div class="image-frame" role="region" aria-label="Alphabet mockup image, scroll vertically if needed" tabindex="0">
+            <img src="../static/images/mockups/Alphabet.png" alt="Alphabet page mockup" loading="lazy">
+          </div>
+          <figcaption><strong>Alphabet</strong><span>Letter cards with sound</span></figcaption>
+        </figure>
+        <figure class="h-card">
+          <div class="image-frame" role="region" aria-label="Animals mockup image, scroll vertically if needed" tabindex="0">
+            <img src="../static/images/mockups/Animals.png" alt="Animals page mockup" loading="lazy">
+          </div>
+          <figcaption><strong>Animals</strong><span>Animal cards and the matching game</span></figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
 </html>
