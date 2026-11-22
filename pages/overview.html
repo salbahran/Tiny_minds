@@ -1,20 +1,251 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../static/css/header.css" />
-    <link rel="stylesheet" href="../static/css/footer.css" />
-    <script src="../js/components/footer.js" defer></script>
-    <script src="../js/components/header.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
-  </head>
-  <body>
-    <site-header></site-header>
-    <site-footer></site-footer>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiny Brains – Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/header.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
+  <link rel="stylesheet" href="../static/css/planning-desgin.css">
+  <link rel="stylesheet" href="../static/css/overview.css">
+  <script src="../js/auth.js"></script>
+  <script src="../js/components/header.js" defer></script>
+  <script src="../js/components/footer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <site-header></site-header>
+  <main id="main" class="page">
+    <div class="page-intro">
+      <h1>Project Overview</h1>
+      <p class="lead">The analysis, structure and standards behind Tiny Brains.</p>
+      <nav class="toc" aria-label="On this page">
+        <ul>
+          <li><a href="#overview">1. Project overview</a></li>
+          <li><a href="#requirements">2. Requirements</a></li>
+          <li><a href="#sitemap">3. Site map</a></li>
+          <li><a href="#journey">4. User journey</a></li>
+          <li><a href="#wireframes">5. Wireframes</a></li>
+          <li><a href="#mockups">6. Mockups</a></li>
+          <li><a href="#style">7. Style guide</a></li>
+          <li><a href="#responsive">8. Responsive plan</a></li>
+          <li><a href="#ai">9. AI plan</a></li>
+          <li><a href="#ethics">10. Ethics &amp; legal</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 1. PROJECT OVERVIEW -->
+    <section class="block" id="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title">1. Project overview</h2>
+      <h3>Website title</h3>
+      <p>Tiny Brains: Learn, Play, Grow</p>
+      <h3>Website category</h3>
+      <p>Educational website</p>
+      <h3>Problem statement</h3>
+      <p>Children aged 2 to 6 learn through colour, sound and play, but many online resources are built for older learners: too much text, cluttered layouts, small buttons and ads. Free sites often rely on pop-ups and advertising, which worries parents.</p>
+      <p>Tiny Brains offers a safe place to practise letters, numbers and animals, with large buttons, bright visuals, short activities, no ads and no external links.</p>
+      <h3>Target audience</h3>
+      <div class="cols">
+        <div><h3>Children (2 to 6)</h3><p>Primary users. Recognise letters, numbers and animals through pictures, colours and sounds.</p></div>
+        <div><h3>Parents</h3><p>Supervise play and register through the sign-up form.</p></div>
+        <div><h3>Teachers</h3><p>Use the site as a classroom or screen-time learning aid.</p></div>
+      </div>
+      <h3>Project objectives</h3>
+      <ul>
+        <li>Build a seven-page, responsive website with HTML5, CSS3 and JavaScript.</li>
+        <li>Provide three learning areas: Alphabet, Numbers and Animals.</li>
+        <li>Apply child-centred design: large targets, balanced colours, readable font, minimal text.</li>
+        <li>Include interactivity: clickable cards with sounds on all three learning pages.</li>
+        <li>Validate the registration form (names of 3+ characters, 8-digit mobile, valid email) with clear messages.</li>
+        <li>Work on desktop, tablet and mobile.</li>
+        <li>Follow ethical and legal practice, and document the project professionally.</li>
+      </ul>
+    </section>
+
+    <!-- 2. REQUIREMENT ANALYSIS -->
+    <section class="block" id="requirements" aria-labelledby="req-title">
+      <h2 id="req-title">2. Requirement analysis</h2>
+      <h3>Functional requirements</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>ID</th><th>Requirement</th><th>Validation / detail</th></tr></thead>
+        <tbody>
+          <tr class="grp"><th colspan="3">User registration</th></tr>
+          <tr><td>FR-1.1</td><td>A registration form for parents and guardians on the Home page</td><td>Form shown on the landing page</td></tr>
+          <tr><td>FR-1.2</td><td>First name field</td><td>Required; at least 3 characters</td></tr>
+          <tr><td>FR-1.3</td><td>Last name field</td><td>Required; at least 3 characters</td></tr>
+          <tr><td>FR-1.4</td><td>Mobile number field</td><td>Required; exactly 8 digits</td></tr>
+          <tr><td>FR-1.5</td><td>Email address field</td><td>Required; standard email format</td></tr>
+          <tr class="grp"><th colspan="3">Form validation</th></tr>
+          <tr><td>FR-1.6</td><td>Validation feedback on the form</td><td>Inline error under the failing field; success message on valid submission</td></tr>
+          <tr class="grp"><th colspan="3">Navigation system</th></tr>
+          <tr><td>FR-2.1</td><td>A persistent navigation bar and footer on all 7 pages</td><td>Shared header and footer components</td></tr>
+          <tr><td>FR-2.2</td><td>Header links to Home, Numbers, Alphabet and Animals; footer links to Planning &amp; Design, Reflection and Overview</td><td>All 7 pages reachable</td></tr>
+          <tr><td>FR-2.3</td><td>The current page link is highlighted</td><td>Active link in strong pink</td></tr>
+          <tr class="grp"><th colspan="3">Interactive features</th></tr>
+          <tr><td>FR-3.1</td><td>Numbers 1 to 10 as interactive cards with audio pronunciation</td><td>Sound plays on tap or click</td></tr>
+          <tr><td>FR-3.2</td><td>Alphabet cards with object images and audio pronunciation</td><td>Cards flip; sound plays on click</td></tr>
+          <tr><td>FR-3.3</td><td>Animal cards with a picture, the animal's name and its sound</td><td>Sound plays on click</td></tr>
+          <tr><td>FR-4.1</td><td>Buttons, cards and forms adapt to desktop, tablet and mobile</td><td>See the responsive plan</td></tr>
+          <tr><td>FR-4.2</td><td>Sound and animation give immediate feedback to young learners</td><td>On tap or click</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Non-functional requirements</h3>
+      <div class="cols">
+        <div><h3>Performance</h3><p>The letters, animal images and activities should load quickly, without noticeable delay.</p></div>
+        <div><h3>Accessibility</h3><p>Large text, clear fonts, high-contrast colours and large buttons, so children aged 2 to 6 can see and use the content easily.</p></div>
+        <div><h3>Security</h3><p>Protect parents' information and collect no personal information from children, and nothing unnecessary.</p></div>
+        <div><h3>Usability</h3><p>A simple, child-friendly interface. Children can move between letters, animals and activities without complicated instructions.</p></div>
+        <div><h3>Responsiveness</h3><p>Works properly on desktops, tablets and phones, with buttons, images and text that stay easy to use.</p></div>
+      </div>
+    </section>
+
+    <!-- 3. SITE MAP -->
+    <section class="block" id="sitemap" aria-labelledby="sitemap-title">
+      <h2 id="sitemap-title">3. Site map</h2>
+      <p>The page hierarchy and navigation structure of the seven pages.</p>
+      <figure class="map">
+        <img src="../static/images/siteMap.png" alt="Site map: Home links to three learning pages (Alphabet, Animals, Numbers) and three documentation pages (Planning and Design, Reflection and AI Report, Overview).">
+        <figcaption>Seven pages, with a shared header and footer on every page.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 4. USER JOURNEY MAP -->
+    <section class="block" id="journey" aria-labelledby="journey-title">
+      <h2 id="journey-title">4. User journey map</h2>
+      <p>How a user moves through the website, from entry to exit.</p>
+      <figure class="map">
+        <img src="../static/images/userJourneyMap.png" alt="User journey: search, find and enter, view the website, sign up or log in, choose a topic, learn and play, exit and return later.">
+        <figcaption>From searching for a safe site to leaving, with a return path for registered users.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 5. WIREFRAMES -->
+    <section class="block" id="wireframes" aria-labelledby="wf-title">
+      <h2 id="wf-title">5. Low-fidelity wireframes</h2>
+      <p>The wireframes are on the Planning &amp; Design page.</p>
+      <div class="link-card"><a href="planning-design.html#wireframes">View wireframes</a></div>
+    </section>
+
+    <!-- 6. MOCKUPS -->
+    <section class="block" id="mockups" aria-labelledby="mk-title">
+      <h2 id="mk-title">6. High-fidelity mockups</h2>
+      <p>The mockups, showing layout, colour scheme, navigation and interface design, are on the Planning &amp; Design page.</p>
+      <div class="link-card"><a href="planning-design.html#mockups">View mockups</a></div>
+    </section>
+
+    <!-- 7. UI STYLE GUIDE -->
+    <section class="block" id="style" aria-labelledby="style-title">
+      <h2 id="style-title">7. UI style guide</h2>
+      <h3>Colour palette</h3>
+      <ul class="swatches">
+        <li><i style="background:#1c2a5e"></i>Primary: navy #1c2a5e</li>
+        <li><i style="background:#2f8a67"></i>Secondary: green #2f8a67</li>
+        <li><i style="background:#ec6fa8"></i>Accent: pink #ec6fa8</li>
+        <li><i style="background:#fff8e7"></i>Background: cream #fff8e7</li>
+        <li><i style="background:#fde3ee"></i>Soft pink #fde3ee</li>
+        <li><i style="background:#c2255c"></i>Error #c2255c</li>
+      </ul>
+      <p>Topic colours: Alphabet mint, Animals lavender, Numbers pale yellow.</p>
+      <h3>Typography</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Use</th><th>Font</th><th>Weight and size</th></tr></thead>
+        <tbody>
+          <tr><td>Heading font</td><td>Fredoka (Google Fonts)</td><td>700; scales with the screen using clamp()</td></tr>
+          <tr><td>Body font</td><td>Fredoka, Nunito as fallback</td><td>500; about 1.05em to 1.25em</td></tr>
+          <tr><td>Buttons and links</td><td>Fredoka</td><td>600</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Components</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Component</th><th>Style</th></tr></thead>
+        <tbody>
+          <tr><td>Buttons</td><td>Fully rounded, white text; green for main actions, pink for sign-up; grow slightly on hover</td></tr>
+          <tr><td>Cards</td><td>Rounded corners, soft shadow, lift on hover</td></tr>
+          <tr><td>Navigation bar</td><td>Sticky, cream; links in a white pill; active link in strong pink</td></tr>
+          <tr><td>Forms</td><td>Rounded inputs; green focus border; red border and message when invalid</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 8. RESPONSIVE DESIGN PLAN -->
+    <section class="block" id="responsive" aria-labelledby="resp-title">
+      <h2 id="resp-title">8. Responsive design plan</h2>
+      <p>The Home page at three screen sizes. The same content rearranges to fit each one.</p>
+      <div class="devices">
+        <figure>
+          <img src="../static/images/desktop.png" alt="Home page on a desktop screen, 1440 pixels wide" loading="lazy">
+          <figcaption><strong>Desktop (1440px)</strong> Header on one row and cards side by side in three columns.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/images/tablet.png" alt="Home page on a tablet screen, 768 pixels wide" loading="lazy">
+          <figcaption><strong>Tablet (768px)</strong> Cards drop to two columns and resize.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/images/mobile.png" alt="Home page on a mobile screen, 393 pixels wide" loading="lazy">
+          <figcaption><strong>Mobile (393px)</strong> Header wraps to two rows and cards stack in one column.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 9. AI UTILIZATION PLAN -->
+    <section class="block" id="ai" aria-labelledby="ai-title">
+      <h2 id="ai-title">9. AI utilization plan</h2>
+      <p>AI acted as an assistant. The team wrote the HTML, CSS and most of the JavaScript, and reviewed and tested all AI output. AI also helped with the project documentation, which the team checked and corrected against the real website. The reflection is on the <a href="reflection-ai-report.html">Reflection &amp; AI report</a> page.</p>
+      <h3>Tools, purpose and expected outcomes</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>AI tool</th><th>Purpose</th><th>Expected outcome</th></tr></thead>
+        <tbody>
+          <tr><td>ChatGPT</td><td>Turn sketches into mockups; suggest a palette; create illustrations; design card layouts</td><td>Polished mockups, a child-friendly palette and consistent illustrations</td></tr>
+          <tr><td>Canva AI</td><td>Create letter cards and cubes</td><td>Colourful alphabet card images</td></tr>
+          <tr><td>Claude (code)</td><td>Help with sound playback and card-change JavaScript</td><td>Working interactive features that the team understands and adapts</td></tr>
+          <tr><td>Telnyx text-to-speech</td><td>Generate spoken names of animals and letters</td><td>Clear, child-friendly audio for each card</td></tr>
+          <tr><td>Claude (documentation)</td><td>Help organise and draft the Overview page, maps, style guide, requirements and ethical and legal sections</td><td>Clear, well-structured documentation that matches the brief</td></tr>
+        </tbody>
+      </table></div>
+      <h3>AI documentation table</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>AI tool</th><th>Prompt</th><th>Output</th><th>Our changes</th></tr></thead>
+        <tbody>
+          <tr><td>ChatGPT</td><td>Turn our hand-drawn sketches into polished mockups, suggest a child-friendly colour palette, and create illustrations and card layouts</td><td>Mockups, a cream, pink, green and navy palette, dinosaur, lion and star illustrations, number images</td><td>Used the mockups as a guide only; wrote all the HTML and CSS ourselves</td></tr>
+          <tr><td>Canva AI</td><td>Create colourful letter cards and cubes for the alphabet page</td><td>Alphabet card images</td><td>Chose the images that suited our layout and placed them in our own cards</td></tr>
+          <tr><td>Claude (code)</td><td>How to play a sound when a card is clicked, and how to change a card on interaction</td><td>Code suggestions for sound playback and card changes</td><td>Reviewed, tested and adapted the code to our website's structure</td></tr>
+          <tr><td>Telnyx text-to-speech</td><td>The name of each animal and letter, read in a child-friendly voice</td><td>Audio files for the spoken names</td><td>Listened to each recording and matched it to its card</td></tr>
+          <tr><td>Claude (documentation)</td><td>Help organising the Overview page and writing the maps, style guide, requirements and credits table</td><td>Drafts of the Overview sections</td><td>Checked against the real project, corrected the details and added our own sources</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 10. ETHICAL AND LEGAL -->
+    <section class="block" id="ethics" aria-labelledby="ethics-title">
+      <h2 id="ethics-title">10. Ethical and legal practices</h2>
+      <h3>Copyright and credits</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Asset</th><th>Used in</th><th>Source</th><th>License</th></tr></thead>
+        <tbody>
+          <tr><td>Fredoka font</td><td>All pages</td><td>Google Fonts</td><td>SIL Open Font License</td></tr>
+          <tr><td>Number images</td><td>Numbers</td><td>ChatGPT</td><td>AI-generated (see AI plan)</td></tr>
+          <tr><td>Letter cards and cubes</td><td>Alphabet</td><td>Canva AI</td><td>AI-generated; Canva terms</td></tr>
+          <tr><td>Spoken names</td><td>Animals, Alphabet</td><td>Telnyx text-to-speech</td><td>AI-generated; Telnyx terms</td></tr>
+          <tr><td>Farm and animal images</td><td>Animals</td><td>Pinterest</td><td>No license stated; educational use only</td></tr>
+          <tr><td>Animal sound effects</td><td>Animals</td><td>Pixabay Sound Effects</td><td>Pixabay Content License</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Privacy and safety</h3>
+      <ul>
+        <li>Only a parent's name, mobile number and email are collected. Nothing is collected from children, and no passwords are stored.</li>
+        <li>Data stays in the browser (localStorage). It is not encrypted, so a real launch would need a secure backend and a privacy policy.</li>
+        <li>No ads, external links or chat features.</li>
+      </ul>
+      <h3>Accessibility</h3>
+      <p>Alt text, ARIA labels and live regions, keyboard-accessible cards, a readable rounded font, large tap targets and a responsive layout.</p>
+      <h3>Academic integrity</h3>
+      <p>The website's code, content and design decisions are the team's own work. AI was used as an assistant for some images, sounds, code suggestions and the written documentation. All of it is listed in the AI plan above, the team reviewed and corrected it, and external sources are credited.</p>
+    </section>
+  </main>
+  <site-footer></site-footer>
+</body>
 </html>
