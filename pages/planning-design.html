@@ -29,6 +29,9 @@
         <ul>
           <li><a href="#wireframes">Wireframes</a></li>
           <li><a href="#mockups">Mockups</a></li>
+          <li><a href="#design-decisions">Design Decisions</a></li>
+          <li><a href="#colors">Color Palette</a></li>
+          <li><a href="#typography">Typography</a></li>
         </ul>
       </nav>
     </div>
@@ -98,6 +101,135 @@
         </figure>
       </div>
     </section>
+
+<!-- ============ 3. DESIGN DECISIONS ============ -->
+    <section class="block" id="design-decisions" aria-labelledby="decisions-title">
+      <h2 id="decisions-title">Design Decisions</h2>
+      <p>Every layout choice was made with two users in mind: toddlers aged 2–6 who tap around by sight and sound, and parents who set up the account.</p>
+
+      <div class="grid grid--two">
+        <article class="card">
+          <h3>Big Buttons & Visual Cards</h3>
+          <p>Young kids cannot read long instructions, so we used large, rounded cards and clear pictures for Alphabet, Numbers, and Animals. Everything is spaced out so small fingers can tap easily without hitting the wrong thing by mistake.</p>
+        </article>
+
+        <article class="card">
+          <h3>Learning by Touch and Sound</h3>
+          <p>Instead of plain text pages, kids flip cards to reveal surprises or tap animals on the farm to hear real sounds and spoken names. Mixing sight, touch, and audio keeps them curious and helps them remember what they learn.</p>
+        </article>
+
+        <article class="card">
+          <h3>One Activity at a Time</h3>
+          <p>Each topic page focuses on one clear task without pop-ups or extra menus getting in the way. Keeping screens simple stops young children from feeling overwhelmed or getting distracted.</p>
+        </article>
+
+        <article class="card">
+          <h3>Simple Sign-Up for Parents</h3>
+          <p>The registration form sits neatly on the home page with clear labels and instant error hints so parents can quickly create an account before handing the screen to their child.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 4. COLOR PALETTE ============ -->
+    <section class="block" id="colors" aria-labelledby="colors-title">
+      <h2 id="colors-title">Color Palette Selection</h2>
+      <p>We picked soft, calm pastel shades that feel friendly and playful without tiring kids' eyes or distracting them from learning. The mix of warm cream, mint, yellow, pink, and lilac is balanced so both boys and girls feel equally welcome.</p>
+
+      <div class="swatches">
+        <figure class="swatch">
+          <div class="chip chip--cream"></div>
+          <figcaption>
+            <strong>Warm Cream</strong>
+            <code>#FFF8E7</code>
+            <span>Main page background; softer on the eyes than bright white.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="swatch">
+          <div class="chip chip--ink"></div>
+          <figcaption>
+            <strong>Deep Navy Ink</strong>
+            <code>#1C2A5E</code>
+            <span>Headings, text, and borders for strong, clear contrast.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="swatch">
+          <div class="chip chip--green"></div>
+          <figcaption>
+            <strong>Playful Green</strong>
+            <code>#0FA37F</code>
+            <span>Main action buttons and interactive highlights.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="swatch">
+          <div class="chip chip--pink"></div>
+          <figcaption>
+            <strong>Soft Pink</strong>
+            <code>#FAB2CB</code>
+            <span>Card frames, borders, and gentle section accents.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="swatch">
+          <div class="chip chip--hotpink"></div>
+          <figcaption>
+            <strong>Bright Pink</strong>
+            <code>#EC6FA8</code>
+            <span>Fun highlights and hover states that catch attention.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="swatch">
+          <div class="chip chip--mint"></div>
+          <figcaption>
+            <strong>Calm Mint</strong>
+            <code>#BDEEE6</code>
+            <span>Learning cards and active hover backgrounds.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="swatch">
+          <div class="chip chip--yellow"></div>
+          <figcaption>
+            <strong>Sunny Yellow</strong>
+            <code>#FFE08A</code>
+            <span>Navigation pills and warm, cheerful accents.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="swatch">
+          <div class="chip chip--lilac"></div>
+          <figcaption>
+            <strong>Soft Lilac</strong>
+            <code>#DCC8F2</code>
+            <span>Secondary cards and gentle visual variety.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 5. TYPOGRAPHY ============ -->
+    <section class="block" id="typography" aria-labelledby="typo-title">
+      <h2 id="typo-title">Typography Selection</h2>
+      <p>Kids respond better to friendly, rounded shapes than stiff, formal fonts. We chose clean, open typefaces that are easy to read for both early learners and parents.</p>
+
+      <div class="grid grid--two">
+        <article class="card">
+          <h3>Headings & Buttons — Fredoka</h3>
+          <p class="specimen specimen--head">Aa Bb Cc 123</p>
+          <p>Used for titles, cards, and buttons across the site. Its rounded, bouncy letters feel casual and fun, grab a child's attention, and make individual letters easy to tell apart.</p>
+        </article>
+
+        <article class="card">
+          <h3>Body & Fallback Text — Fredoka / Nunito</h3>
+          <p class="specimen specimen--body">Fun learning for curious little minds.</p>
+          <p>Used for short descriptions, hints, and parent forms. Both fonts have wide spacing and simple letter shapes so instructions stay clear and easy to scan on any screen.</p>
+        </article>
+      </div>
+    </section>
+
   </main>
 
   <site-footer></site-footer>

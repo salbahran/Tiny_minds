@@ -1,20 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../static/css/header.css" />
-    <link rel="stylesheet" href="../static/css/footer.css" />
-    <script src="../js/components/footer.js" defer></script>
-    <script src="../js/components/header.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
-  </head>
-  <body>
-    <site-header></site-header>
-    <site-footer></site-footer>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiny Brains – Reflection &amp; AI Report</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/header.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
+  <link rel="stylesheet" href="../static/css/planning-desgin.css">
+  <link rel="stylesheet" href="../static/css/reflection.css">
+  <script src="../js/auth.js"></script>
+  <script src="../js/components/header.js" defer></script>
+  <script src="../js/components/footer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <site-header></site-header>
+
+  <main id="main" class="page">
+
+    <div class="page-intro">
+      <h1>Reflection &amp; AI Report</h1>
+      <p class="lead">What we built, how we shared the work, and how our hand-drawn sketches became the final Tiny Brains design with help from AI.</p>
+      <nav class="toc" aria-label="On this page">
+        <ul>
+          <li><a href="#built">What we built</a></li>
+          <li><a href="#team">Who did what</a></li>
+          <li><a href="#process">How we worked</a></li>
+          <li><a href="#sketches">Sketch to design</a></li>
+          <li><a href="#ai">How we used AI</a></li>
+          <li><a href="#reflection">Reflection</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 1. WHAT WE BUILT -->
+    <section class="block" id="built" aria-labelledby="built-title">
+      <h2 id="built-title">What we built</h2>
+      <p>Tiny Brains is a learning website for children aged 2 to 6. Children explore three learning worlds (numbers, the alphabet and animals) through big colourful cards, sounds and simple games. Parents can create an account and log in from the home page.</p>
+      <div class="cols">
+        <div><h3>For children</h3><p>Large buttons, bright colours, friendly characters and audio, so even children who cannot read yet can play.</p></div>
+        <div><h3>For parents</h3><p>A clear overview of what children learn, plus a simple sign-up and log-in.</p></div>
+        <div><h3>For the course</h3><p>Hand-written HTML, CSS and JavaScript, a responsive layout, and documentation pages for planning, design and AI use.</p></div>
+      </div>
+    </section>
+
+    <!-- 2. WHO DID WHAT -->
+    <section class="block" id="team" aria-labelledby="team-title">
+      <h2 id="team-title">Who did what</h2>
+      <p>We split the website by page, so each member owned one page from sketch to finished code. Shared parts (header, footer, colours and fonts) were agreed together so every page looks like the same website.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Member</th><th>Page</th><th>File</th><th>What the page does</th></tr></thead>
+        <tbody>
+          <tr><td><span class="who who--pink"><i></i>Sarah</span></td><td>Home (main page)</td><td><code>home.html</code></td><td>Hero section, the three learning-world cards, overview for parents, and the sign-up and log-in forms</td></tr>
+          <tr><td><span class="who who--mint"><i></i>Fatima Dhahi</span></td><td>Alphabet</td><td><code>alphabet.html</code></td><td>A–Z letter grid; picking a letter shows its card with an example word and plays its sound</td></tr>
+          <tr><td><span class="who who--lilac"><i></i>Batool</span></td><td>Animals</td><td><code>animals.html</code></td><td>Farm animal cards that show each animal's name and play its name and sound</td></tr>
+          <tr><td><span class="who who--yellow"><i></i>Ali Nasser</span></td><td>Numbers</td><td><code>numbers.html</code></td><td>"Number Garden" with flip cards for each number, its spoken name and a counting choice</td></tr>
+          <tr><td><strong>Whole team</strong></td><td>Shared parts</td><td>header, footer, docs</td><td>Planning, sketches, the shared header and footer, and the Overview, Planning &amp; design and Reflection pages</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 3. HOW WE WORKED -->
+    <section class="block" id="process" aria-labelledby="process-title">
+      <h2 id="process-title">How we worked</h2>
+      <p>We followed the same steps for every page:</p>
+      <ol class="steps">
+        <li><strong>Plan</strong>Agreed on the audience, the four main pages and who owns each one.</li>
+        <li><strong>Sketch</strong>Drew each page by hand on a tablet to decide the layout.</li>
+        <li><strong>AI design</strong>Gave the sketches to ChatGPT to turn them into colourful mockups.</li>
+        <li><strong>Build</strong>Wrote the HTML and CSS ourselves, using the mockups as a guide.</li>
+        <li><strong>Add sound &amp; play</strong>Added audio and card interactions with JavaScript.</li>
+        <li><strong>Test &amp; fix</strong>Checked every page on desktop, tablet and phone and fixed problems.</li>
+      </ol>
+    </section>
+
+    <!-- 4. SKETCH TO DESIGN -->
+    <section class="block" id="sketches" aria-labelledby="sketches-title">
+      <h2 id="sketches-title">From sketch to design</h2>
+      <p>These are our original hand-drawn sketches next to the designs AI made from them. The sketch decided <em>where</em> things go; AI added the colours, characters and polish. We then built the real pages by hand.</p>
+
+      <div class="pair">
+        <h3>Home – learning worlds</h3>
+        <p>Three cards, one for each world. AI kept our layout (tall alphabet card on the left, two cards on the right) and added the characters.</p>
+        <div class="pair-row">
+          <figure><img src="../static/images/reflection/sketch-home-worlds.jpg" alt="Hand sketch of three boxes: a tall box with letters A, B, C and two boxes with a dinosaur and the numbers 1 to 5" loading="lazy"><figcaption><span class="tag tag--sketch">Our sketch</span></figcaption></figure>
+          <span class="arrow" aria-hidden="true">→</span>
+          <figure><img src="../static/images/reflection/ai-home-worlds.jpg" alt="AI design of the same three cards: Alphabet with a girl and letters, Animals with a green dinosaur, Numbers with colourful digits" loading="lazy"><figcaption><span class="tag tag--ai">AI design</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="pair">
+        <h3>Home – overview for parents</h3>
+        <p>A title, a short text and three drop-down questions, with an animal on the right.</p>
+        <div class="pair-row">
+          <figure><img src="../static/images/reflection/sketch-overview.jpg" alt="Hand sketch with the word Overview, lines of text, three drop-down boxes and a lion" loading="lazy"><figcaption><span class="tag tag--sketch">Our sketch</span></figcaption></figure>
+          <span class="arrow" aria-hidden="true">→</span>
+          <figure><img src="../static/images/reflection/ai-overview.jpg" alt="AI design of the overview section with three question cards and a waving lion" loading="lazy"><figcaption><span class="tag tag--ai">AI design</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="pair">
+        <h3>Log in</h3>
+        <p>A simple form with email, password, "forgot password" and a sign-up link.</p>
+        <div class="pair-row">
+          <figure><img src="../static/images/reflection/sketch-login.jpg" alt="Hand sketch of a log-in box with email and password fields and a sign-in button" loading="lazy"><figcaption><span class="tag tag--sketch">Our sketch</span></figcaption></figure>
+          <span class="arrow" aria-hidden="true">→</span>
+          <figure><img src="../static/images/reflection/ai-login.jpg" alt="AI design of the log-in card with a child and a dinosaur on each side" loading="lazy"><figcaption><span class="tag tag--ai">AI design</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="pair">
+        <h3>Footer</h3>
+        <p>Logo and a short text, page links in the middle and contact details on the right.</p>
+        <div class="pair-row">
+          <figure><img src="../static/images/reflection/sketch-footer.jpg" alt="Hand sketch of a footer with logo, links, contact number, email and Instagram and Facebook" loading="lazy"><figcaption><span class="tag tag--sketch">Our sketch</span></figcaption></figure>
+          <span class="arrow" aria-hidden="true">→</span>
+          <figure><img src="../static/images/reflection/ai-footer.jpg" alt="AI design of the footer with page links, contact details and green hills" loading="lazy"><figcaption><span class="tag tag--ai">AI design</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="pair">
+        <h3>Alphabet</h3>
+        <p>A big letter card with an example word and a sound button, plus a grid of all the letters.</p>
+        <div class="pair-row">
+          <figure><img src="../static/images/reflection/sketch-alphabet.jpg" alt="Hand sketch of a big card with A, a and Apple, a sound button, and a grid of letter boxes" loading="lazy"><figcaption><span class="tag tag--sketch">Our sketch</span></figcaption></figure>
+          <span class="arrow" aria-hidden="true">→</span>
+          <figure><img src="../static/images/reflection/ai-alphabet.jpg" alt="AI design of the alphabet page with an apple card, a Listen button and an A to Z grid" loading="lazy"><figcaption><span class="tag tag--ai">AI design</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="pair">
+        <h3>Numbers</h3>
+        <p>A big number card with a flip arrow and a sound button, and a winding path of numbers to count along.</p>
+        <div class="pair-row">
+          <figure><img src="../static/images/reflection/sketch-numbers.jpg" alt="Hand sketch of a card with the number 1 and a flip arrow, next to a winding path with numbers 1 to 4" loading="lazy"><figcaption><span class="tag tag--sketch">Our sketch</span></figcaption></figure>
+          <span class="arrow" aria-hidden="true">→</span>
+          <figure><img src="../static/images/reflection/ai-numbers.jpg" alt="AI design of the numbers page with a number 1 card, a star, a Listen button and a path from 1 to 5 with a dinosaur" loading="lazy"><figcaption><span class="tag tag--ai">AI design</span></figcaption></figure>
+        </div>
+      </div>
+
+      <h3>More of our sketches</h3>
+      <p>Not every sketch went through AI. These ones we used directly as a guide while coding.</p>
+      <div class="sketches">
+        <figure><img src="../static/images/reflection/sketch-home-hero.jpg" alt="Hand sketch of the home page header and hero with a dinosaur surrounded by letters" loading="lazy"><figcaption>Home – header and hero</figcaption></figure>
+        <figure><img src="../static/images/reflection/sketch-alphabet-card.jpg" alt="Hand sketch of a flip card: front shows A a and a sound button, back shows an apple" loading="lazy"><figcaption>Alphabet – flip card front and back</figcaption></figure>
+        <figure><img src="../static/images/reflection/sketch-animals-farm.jpg" alt="Hand sketch of a farm scene with a lion, giraffe, duck and fence and the word Lion with a play button" loading="lazy"><figcaption>Animals – farm scene</figcaption></figure>
+        <figure><img src="../static/images/reflection/sketch-animals-game.jpg" alt="Hand sketch of a cloud of animal circles with the word Cat and a play button below" loading="lazy"><figcaption>Animals – choose the animal</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 5. HOW WE USED AI -->
+    <section class="block" id="ai" aria-labelledby="ai-title">
+      <h2 id="ai-title">How we used AI</h2>
+      <p>AI was our assistant, not our builder. It turned ideas into pictures and helped with small parts of the code, but we wrote and checked the website ourselves. The full list of tools and prompts is in the <a href="overview.html#ai">AI plan on the Overview page</a>.</p>
+      <div class="cols">
+        <div>
+          <h3>What AI did</h3>
+          <ul>
+            <li>Turned our sketches into mockups (ChatGPT)</li>
+            <li>Suggested the palette and drew the characters (ChatGPT)</li>
+            <li>Made the letter cards and cubes (Canva AI)</li>
+            <li>Read out the names of letters and animals (Telnyx text-to-speech)</li>
+            <li>Helped with sound and card-flip JavaScript (Claude)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What we did</h3>
+          <ul>
+            <li>Planned the website and drew every sketch</li>
+            <li>Wrote the HTML and CSS by hand</li>
+            <li>Tested and changed the AI code to fit our pages</li>
+            <li>Listened to each recording and matched it to its card</li>
+            <li>Made the pages responsive and accessible</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. REFLECTION -->
+    <!-- Add the reflection text from our documents here -->
+    <section class="block" id="reflection" aria-labelledby="reflection-title">
+      <h2 id="reflection-title">Reflection</h2>
+      <div class="cols">
+        <div>
+          <h3>What went well</h3>
+          <p>Sketching first meant we agreed on the layout before writing code. Splitting the site by page let everyone work at the same time without breaking each other's files.</p>
+        </div>
+        <div>
+          <h3>Challenges</h3>
+          <p>Keeping four pages consistent was hard, so we shared one header, footer and palette. AI images did not always match our layout, so we used them as a guide and built the real page ourselves.</p>
+        </div>
+        <div>
+          <h3>What we learned</h3>
+          <p>AI is fast for ideas and visuals, but every output needs checking. Designing for young children means big buttons, sound and very little text.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
 </html>

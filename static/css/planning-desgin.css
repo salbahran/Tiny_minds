@@ -212,17 +212,45 @@ p { max-width: 42em; margin: 0 0 1em; }
   gap: 1.5em;
   margin-top: 1.5em;
 }
-.grid--two { grid-template-columns: repeat(auto-fit, minmax(20em, 1fr)); }
+.grid--two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 26em), 1fr)); }
 
 .card {
-  background: #fff;
-  border-radius: 1.5em;
+  background: var(--pink);
+  border: 2px solid var(--pink);
+  border-radius: 1.25em;
   padding: 1.5em;
+  box-shadow: 0 6px 16px rgba(28, 42, 94, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.card:nth-child(4n + 1) { background: var(--mint); border-color: var(--green); }
+.card:nth-child(4n + 2) { background: var(--yellow); border-color: var(--hotpink); }
+.card:nth-child(4n + 3) { background: var(--lilac); border-color: var(--hotpink); }
+.card:nth-child(4n + 4) { background: var(--pink); border-color: var(--hotpink); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .card:hover {
+    transform: translateY(-0.25em);
+    box-shadow: 0 10px 22px rgba(28, 42, 94, 0.14);
+  }
+}
+
 .card p:last-child,
 .card ul:last-child { margin-bottom: 0; }
 
-.card h3 { font-size: 1.35em; }
+.card h3 {
+  font-size: 1.35em;
+  padding-bottom: 0.45em;
+  margin-bottom: 0.6em;
+  border-bottom: 0.15em dashed var(--ink);
+}
+
+.card .specimen {
+  max-width: none;
+  padding: 0.5em 0.75em;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 0.9em;
+}
 
 /* ---------- Colour palette ---------- */
 .swatches {
