@@ -80,7 +80,6 @@ button.btn-signup {
   outline-offset: 3px;
 }
 
-/* Small screens: logo + button on row 1, nav on row 2 */
 @media (max-width: 800px) {
   .site-header { flex-wrap: wrap; padding: 0.75em 1em; }
   .logo { order: 1; }

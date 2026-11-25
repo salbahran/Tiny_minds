@@ -1,15 +1,14 @@
-// ----- 1. Home page behaviour depending on login state -----
 const loginSection = document.getElementById('login');
 const startButton = document.querySelector('.btn-start');
 
 if (Auth.isLoggedIn()) {
-  loginSection.hidden = true;               // already logged in: hide the form
+  loginSection.hidden = true;          
 } else {
-  startButton.setAttribute('href', '#login'); // not logged in: "Start playing" goes to the form
+  startButton.setAttribute('href', '#login');
 }
-// Sent here from a learning page? Explain why, after the page is drawn
+
 if (sessionStorage.getItem('loginRequired')) {
-  sessionStorage.removeItem('loginRequired');   // so a refresh doesn't show it again
+  sessionStorage.removeItem('loginRequired');
 
   window.addEventListener('load', () => {
     setTimeout(() => {
@@ -18,11 +17,9 @@ if (sessionStorage.getItem('loginRequired')) {
   });
 }
 
-// ----- 2. Registration form -----
 const form = document.getElementById('registrationForm');
 const formMessage = document.getElementById('formMessage');
 
-// Each check returns true when the value is fine, or an error message when it is not.
 const fields = {
   firstName: {
     input: document.getElementById('firstName'),
@@ -54,7 +51,6 @@ const fields = {
   },
 };
 
-// Shows or clears the error for one field. Returns true if the field is valid.
 function validateField(field) {
   const result = field.check(field.input.value.trim());
 
@@ -69,18 +65,16 @@ function validateField(field) {
   return false;
 }
 
-// Check each field when the user leaves it
 for (const field of Object.values(fields)) {
   field.input.addEventListener('blur', () => validateField(field));
 }
 
-// Mobile field: only allow digits while typing
 fields.mobile.input.addEventListener('input', () => {
   fields.mobile.input.value = fields.mobile.input.value.replace(/\D/g, '');
 });
 
 form.addEventListener('submit', (event) => {
-  event.preventDefault();               // stop the page from reloading by itself
+  event.preventDefault();       
 
   let allValid = true;
   for (const field of Object.values(fields)) {
@@ -101,6 +95,5 @@ formMessage.className = 'form-message';
     email: fields.email.input.value.trim(),
   });
 
-  location.hash = 'play';
-  location.reload();                    // reload so the header changes to "Log out"
+  location.hash = 'play';            
 });

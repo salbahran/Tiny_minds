@@ -179,7 +179,6 @@
         a.play().catch(() => (nameToggle.checked = false));
       }
 
-      // Clicking an animal: show the card + play the ANIMAL SOUND
       document.querySelectorAll(".animal").forEach((btn) => {
         btn.addEventListener("click", () => {
           document
@@ -187,7 +186,7 @@
             .forEach((b) => b.classList.remove("selected"));
           btn.classList.add("selected");
           btn.classList.remove("pop");
-          void btn.offsetWidth; // restart the animation
+          void btn.offsetWidth; 
           btn.classList.add("pop");
 
           current = btn.dataset.animal.toLowerCase();
@@ -204,7 +203,6 @@
         });
       });
 
-      // The play button: plays the NAME audio only
       nameToggle.addEventListener("change", () => {
         if (!current) return;
         if (nameToggle.checked) playFile(current + "-name", true);

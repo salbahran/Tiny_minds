@@ -10,7 +10,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ---------- Layout ---------- */
 .main-Section {
   min-height: calc(100vh - 80px);
   width: 100%;
@@ -29,7 +28,6 @@ body {
   gap: 20px;
 }
 
-/* ---------- Cubes ---------- */
 .letters-Section {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -40,11 +38,9 @@ body {
   align-content: center;
   width: 100%;
   margin: 0;
-  /* padding: 20px 10px; */
 }
 
 
-/* ---------- Cubes sxyrk ---------- */
 .letters-Section img {
   --s: 1;
   --x: 0px;
@@ -222,7 +218,6 @@ body {
   transform: rotate(35deg);
 }
 
-/* ---------- Sound button ---------- */
 .sound-btn {
   padding: 12px 28px;
   background-color: var(--pink-strong);
@@ -240,7 +235,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 800px) {
   .main-Section {
     grid-template-columns: 1fr;

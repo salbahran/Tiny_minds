@@ -19,7 +19,6 @@ body {
     aspect-ratio: 1672 / 941;
     min-height: 100vh;
     background-color: var(--cream);
-    /* background: #8ed8f5 url("../images/numbers/number-garden.png") center / 100% 100% no-repeat; */
     color: #142e60;
     font-family: "Fredoka", "Arial Rounded MT Bold", system-ui, sans-serif;
 }

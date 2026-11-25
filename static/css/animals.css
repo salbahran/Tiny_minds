@@ -10,14 +10,13 @@
   --lavender: #dcc8f2;
 }
 
-/* Fixed: replaced '-' with '*' */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Fixed: ensures cream background fills the entire viewport with no white borders */
+
 html,
 body {
   margin: 0;
@@ -33,7 +32,6 @@ body {
 
 
 @media (prefers-reduced-motion: reduce) {
-  /* Fixed: replaced '-' with '*' */
   * {
     animation: none !important;
     transition: none !important;
@@ -48,7 +46,6 @@ main {
 .intro h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 6px; font-weight: 700; }
 .intro p { margin: 0; font-size: 1.15rem; opacity: 0.8; }
 
-/* ---------- Farm ---------- */
 .farm {
   position: relative;
   background: transparent;
@@ -72,7 +69,6 @@ main {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* animal image: white outline + drop shadow so it stands out */
 .animal img {
   width: 100%;
   height: auto;
@@ -85,8 +81,6 @@ main {
   pointer-events: none;
 }
 
-
-/* ground shadow under the animal */
 .animal::after {
   content: "";
   position: absolute;
@@ -123,7 +117,6 @@ main {
   font-size: 1.05rem;
 }
 
-/* ---------- Info card ---------- */
 .card {
   margin: 28px auto 0;
   max-width: 720px;
@@ -165,7 +158,6 @@ main {
 }
 .card-info h2 { margin: 0; font-size: 4rem; font-weight: 700; line-height: 1; }
 
-/* ---------- Audio button ---------- */
 .btn-wrapper {
   --width: 210px;
   --height: 60px;
@@ -265,7 +257,6 @@ main {
     0 0 20px 5px hsl(var(--hue), 100%, 60%, 0.4);
 }
 
-/* hover & tactile press */
 .btn-wrapper:hover .audio-btn,
 .btn-wrapper:focus-within .audio-btn {
   transform: translate3d(0, -2px, 2px);
