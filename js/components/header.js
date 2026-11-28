@@ -1,7 +1,11 @@
 class SiteHeader extends HTMLElement {
   connectedCallback() {
+    this.render();
+  }
+
+  render() {
     const current = location.pathname.split('/').pop() || 'home.html';
-    const loggedIn= Auth.isLoggedIn();
+    const loggedIn = Auth.isLoggedIn();
 
     const links = [
       { href: 'home.html',     label: 'Home' },
@@ -15,9 +19,9 @@ class SiteHeader extends HTMLElement {
       return `<a href="${href}" class="nav-link${active ? ' is-active' : ''}"${active ? ' aria-current="page"' : ''}>${label}</a>`;
     }).join('');
 
-    const action = loggedIn 
-    ? `<button type="button" class="btn-signup" id="logout-btn">Log out</button>`
-    : `<a class="btn-signup" href="home.html#login">Parent sign-up</a>`;
+    const action = loggedIn
+      ? `<button type="button" class="btn-signup" id="logout-btn">Log out</button>`
+      : `<a class="btn-signup" href="home.html#login">Parent sign-up</a>`;
 
     this.innerHTML = `
       <header class="site-header">
@@ -28,12 +32,10 @@ class SiteHeader extends HTMLElement {
         ${action}
       </header>`;
 
-    if (loggedIn) {
-      this.querySelector('#logout-btn').addEventListener('click', () => {
-        Auth.logout();
-        location.href = 'home.html';
-      });
-    }
+    this.querySelector('#logout-btn')?.addEventListener('click', () => {
+      Auth.logout();
+      location.href = 'home.html';
+    });
   }
 }
 

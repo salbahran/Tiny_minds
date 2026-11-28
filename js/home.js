@@ -94,6 +94,9 @@ formMessage.className = 'form-message';
     mobile: fields.mobile.input.value.trim(),
     email: fields.email.input.value.trim(),
   });
+  document.querySelector('site-header')?.render();
 
-  location.hash = 'play';            
+  loginSection.hidden = true;
+  startButton.setAttribute('href', '#play');
+  location.hash = 'play';
 });
